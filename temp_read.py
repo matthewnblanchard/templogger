@@ -27,5 +27,5 @@ def add_temp():
 
 while True:
         add_temp()
-        time.sleep(10)
+        time.sleep(60)
 
