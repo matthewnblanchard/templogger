@@ -15,7 +15,7 @@ temperature. Temperature is read back in units of celsius.
 The SQLite3 database and sensor querying are handled by a python script, temp\_read.py. 
 Temperatures are stored in timestamp, temperature pairs in a table within the SQL database.
 I2C communication is reliazed through the SMBus python module. The table is updated with current
-information every 60 seconds
+information every 60 seconds. 
 
 ## Lighttpd setup
 Lighttpd was set up and configured to run a python script for the webpage. By default,
@@ -26,8 +26,7 @@ Following this, the lighttpd package was installed:
 Lighttpd is automatically set to start at boot when installed
 
 A configuration file was made for CGI, for use with the python script:
-        /etc/lighttpd/conf.d/cgi.conf
-        /----------------------------/
+/etc/lighttpd/conf.d/cgi.conf
         server.modules += ("mod\_cgi")
         
         cgi.assign =            ( ".pl"  => "/usr/bin/perl",
